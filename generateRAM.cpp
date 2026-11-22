@@ -1,4 +1,3 @@
-
 #include "TaskGenerator.h"
 
 int generateRAM(int id)

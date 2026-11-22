@@ -1,7 +1,7 @@
-#include "LoadBalancer.h"
-void assignTask1(Server &s, Task t)
+#include "Loadbalancer.h"
+void assignTask1(Server &s, Task t) 
 {
- if (s.totalCPU - s.usedCPU >= t.cpu &&s.totalRAM - s.usedRAM >= t.ram &&s.totalStorage - s.usedStorage >= t.storage)
+ if (checkEligibility1(s, t)) 
  {
   s.usedCPU = s.usedCPU + t.cpu;
   s.usedRAM = s.usedRAM + t.ram;

@@ -1,16 +1,19 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "TaskQueue.h"
+
 void initializeQueue(TaskQueue* q, int capacity)
 {
  q->front = NULL;
  q->count = 0;
  q->capacity = capacity;
 }
+
 int isEmpty(TaskQueue* q)
 {
  return q->front == NULL;
 }
+
 int isFull(TaskQueue* q)
 {
  return q->count >= q->capacity;
@@ -52,6 +55,7 @@ int enqueue(TaskQueue* q, Task task)
  q->count++;
  return 1;
 }
+
 int dequeue(TaskQueue* q, Task* task)
 {
  if (isEmpty(q))
@@ -65,18 +69,25 @@ int dequeue(TaskQueue* q, Task* task)
  q->count--;
  return 1;
 }
+
 void displayQueue(TaskQueue* q)
 {
  if (isEmpty(q))
  {
+  printf("\nQueue is empty\n");
   return;
  }
+
  Node* temp = q->front;
- while (temp != NULL)
- {
+ printf("TASK QUEUE in priority order \n");
+ printf(" Task ID \t Priority \t CPU \t RAM \t Storage\n");
+  while (temp != NULL)
+  {
+   printf("  %d \t\t %d \t\t %d \t %d \t %d\n",temp->task.id,temp->task.priority, temp->task.cpu, temp->task.ram, temp->task.storage);
   temp = temp->next;
  }
 }
+
 void clearQueue(TaskQueue* q)
 {
  Node* temp;

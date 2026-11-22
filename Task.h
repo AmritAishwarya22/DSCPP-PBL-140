@@ -7,6 +7,8 @@ struct Task
  int cpu;
  int ram;
  int storage;
+ int status;
+ bool completed;
 };
 #define MAX_TASKS 100
 #endif

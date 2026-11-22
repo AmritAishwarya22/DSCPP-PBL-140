@@ -9,5 +9,6 @@ Task generateTask(int id)
  t.cpu = generateCPU(id);
  t.ram = generateRAM(id);
  t.storage = generateStorage(id);
+ t.status = 0; 
  return t;
 }
